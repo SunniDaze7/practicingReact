@@ -1,0 +1,50 @@
+.nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    color: black;
+    width: 25%;
+    margin: 20px;
+    border-radius: 25%;
+    box-shadow: 10px 5px 5px rgb(232, 134, 151);
+}
+.card:hover{
+    width: 26%;
+    margin: 15px;
+    box-shadow: 15px 10px 10px rgb(234, 151, 165);
+}
+
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+}
+.scores{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+img{
+    height: 150px;
+    width: 150px;
+    padding: 20px;
+    border-radius: 25%;
+}
+
+button{
+    background-color: rgb(232, 134, 151);
+    height:30px;
+    border-radius: 10%;
+    margin: 0px;
+    border-style: none;
+}
+button:hover{
+    border-radius: 10%;
+    margin:0px;
+    box-shadow: 7px 3px 3px rgb(145, 136, 138);
+}

@@ -1,22 +1,32 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import RenderName from './components/card'
+import CardList from './components/CardList'
+import GameOver from './components/gameover'
+//import card objects
+import cards from './assets/cards'
+//import styles
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  //states for scores
+  const [score, setScore] = useState(0)
+  const [bestScore, setBestScore] = useState(0)
+  //to set gameover screen
+  const [gameOver, setGameOver] = useState(false)
 
   return (
     <>
-      <h1>Memory Card</h1>
-      <RenderName />
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
-
+    {!gameOver ? 
+    <>
+    <div className='nav'>
+    <h1>Memory Card Game</h1>
+    <div className='scores'>
+      <p>Score: {score}</p>
+      <p>BestScore: {bestScore}</p>
+    </div>
+    </div>
+        <CardList setScore={setScore} setBestScore={setBestScore} score={score} bestScore={bestScore} setGameOver={setGameOver}/>
+        </> :
+        <GameOver setGameOver={setGameOver} setScore={setScore} score={score} setBestScore={setBestScore} bestScore={bestScore}/> }
     </>
   )
 }
