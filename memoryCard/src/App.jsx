@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import CardList from './components/CardList'
 import GameOver from './components/gameover'
 //import card objects
@@ -12,7 +12,7 @@ function App() {
   const [bestScore, setBestScore] = useState(0)
   //to set gameover screen
   const [gameOver, setGameOver] = useState(false)
-
+  
   return (
     <>
     {!gameOver ? 
@@ -24,7 +24,7 @@ function App() {
       <p>BestScore: {bestScore}</p>
     </div>
     </div>
-        <CardList setScore={setScore} setBestScore={setBestScore} score={score} bestScore={bestScore} setGameOver={setGameOver}/>
+        <CardList cards={cards} setScore={setScore} setBestScore={setBestScore} score={score} bestScore={bestScore} setGameOver={setGameOver}/>
         </> :
         <GameOver setGameOver={setGameOver} setScore={setScore} score={score} setBestScore={setBestScore} bestScore={bestScore}/> }
     </>

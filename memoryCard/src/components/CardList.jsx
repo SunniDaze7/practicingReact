@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import cards from '../assets/cards'
 import Card from './card'
 import Win from "./win";

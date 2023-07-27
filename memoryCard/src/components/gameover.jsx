@@ -1,4 +1,5 @@
 import React from "react";
+import gameoverMolang from '../assets/gameoverMolang.png'
 
 function GameOver(props){
     //go back to home and reset score
@@ -11,8 +12,11 @@ function GameOver(props){
     }
 return(
     <>
+    <div className="gameOver">
     <h1>Game Over</h1>
     <button onClick={handleClick}>Back to Game</button>
+    <img src={gameoverMolang} />
+    </div>
     </>
 )
 }
