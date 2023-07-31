@@ -6,10 +6,22 @@ import Win from "./win";
 function CardList(props){
     //show and hide rules state
     const [rules, setRules] = useState(false)
+    const [selectedCards, setSelectedCards] = useState([])
+      //set state for if card has been clicked or not
+  const [cardSelected, setCardSelected] = useState(false)
 
     //when rule button is clicked, show and mhide rules
     function handleClick(){
         setRules(true)
+    }
+    
+    function handleCardClick(){
+        if(!cardSelected){
+            setCardSelected(true)
+            } else if(cardSelected){
+              props.setGameOver(true)
+            }
+            console.log(cardSelected) 
     }
 
     return(
@@ -23,7 +35,7 @@ function CardList(props){
         {/* map through cards array and render each card */}
         <div className='cards'>
         {cards.map((card, idx)=> 
-        (<Card card={card} key={idx} setScore={props.setScore} setBestScore={props.setBestScore} score={props.score} bestScore={props.bestScore} setGameOver={props.setGameOver}/>
+        (<Card card={card} key={idx} onClick={handleCardClick} setScore={props.setScore} setBestScore={props.setBestScore} score={props.score} bestScore={props.bestScore} setGameOver={props.setGameOver}/>
         ))}
         </div>
         </>
