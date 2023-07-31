@@ -10,18 +10,9 @@ function CardList(props){
       //set state for if card has been clicked or not
   const [cardSelected, setCardSelected] = useState(false)
 
-    //when rule button is clicked, show and mhide rules
+    //when rule button is clicked, show and hide rules
     function handleClick(){
         setRules(true)
-    }
-    
-    function handleCardClick(){
-        if(!cardSelected){
-            setCardSelected(true)
-            } else if(cardSelected){
-              props.setGameOver(true)
-            }
-            console.log(cardSelected) 
     }
 
     return(
@@ -34,8 +25,8 @@ function CardList(props){
         : <button onClick={handleClick}>Show Rules</button>}
         {/* map through cards array and render each card */}
         <div className='cards'>
-        {cards.map((card, idx)=> 
-        (<Card card={card} key={idx} onClick={handleCardClick} setScore={props.setScore} setBestScore={props.setBestScore} score={props.score} bestScore={props.bestScore} setGameOver={props.setGameOver}/>
+        {cards.map((card)=> 
+        (<Card card={card} key={card.id} setScore={props.setScore} setBestScore={props.setBestScore} score={props.score} bestScore={props.bestScore} setGameOver={props.setGameOver}/>
         ))}
         </div>
         </>

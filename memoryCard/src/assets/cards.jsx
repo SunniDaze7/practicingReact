@@ -9,27 +9,33 @@ import sweetrollMolang from './sweetrollMolang.jpg'
 //all the cars with name and picture
  const cards = [{
         name: 'Donut Molang',
-        image: donutMolang
+        image: donutMolang,
+        id:1
     },
     {
         name: 'Ice Cream Molang',
-        image: icecreamMolang
+        image: icecreamMolang,
+        id:2
     },
     {
         name: 'Orange Molang',
-        image: orangeMolang
+        image: orangeMolang,
+        id:3
     },
     {
         name: 'Picnic Molang',
-        image: picnicMolang
+        image: picnicMolang,
+        id:4
     },
     {
         name: 'Molang',
-        image: plainMolang
+        image: plainMolang,
+        id:5
     },
     {
         name: 'Sweet Roll Molang',
-        image: sweetrollMolang
+        image: sweetrollMolang,
+        id:6
     }]
 
 export default cards

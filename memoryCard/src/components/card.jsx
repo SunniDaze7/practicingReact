@@ -2,10 +2,10 @@ import React , {useState, useEffect} from 'react';
 import cards from '../assets/cards'
 
 const card = (props) => {
-    //set state for if card has been clicked or not
-    // const [cardSelected, setCardSelected] = useState(false)
       // state for randomizing cards
     const [randomCard, setRandomCard] = useState([])
+    //set state for if card has been clicked or not
+    const [selectedCards, setSelectedCards] = useState([])
 
 
     //to shuffle cards
@@ -31,33 +31,25 @@ const card = (props) => {
   // when card clicked, score increasees by one
   // if card has already been clicked get gameover
   function handleClick(){
-  //  if(!cardSelected){
-  //   setCardSelected(true)
-  //   } else if(cardSelected){
-  //     props.setGameOver(true)
-  //   } 
+
+  if(!selectedCards.includes(props.card.id)){
+    setSelectedCards([...selectedCards, props.card.id])
+    } else if(selectedCards.includes(props.card.id)){
+      props.setGameOver(true)
+    }
+    console.log(selectedCards)
+
     props.setScore(props.score+1)
     setRandomCard(shuffle(cards))
   }
 
-  // //push selected cards into an array, if card included in array gameover
-  // function handleClick(){
-  //   if(!selectedCards.includes(props.card)){
-  //    setSelectedCards(selectedCards.push(props.card))
-  //    }else if(selectedCards.name == "Orange Molang"){
-  //      props.setGameOver(true)
-  //    } 
-  //    props.setScore(props.score+1)
-  //    setRandomCard(shuffle(cards))
-  //    console.log(selectedCards)
-  //  }
- 
 
   return (
     <>
         <div className='card' onClick={handleClick}>
         <img src={props.card.image}></img>
         <p>{props.card.name}</p>
+        <p>{props.card.id}</p>
         </div>
     </>
   )

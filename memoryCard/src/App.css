@@ -10,6 +10,7 @@
     background-color: white;
     color: black;
     width: 25%;
+    height:25%;
     margin: 20px;
     border-radius: 25%;
     box-shadow: 10px 5px 5px rgb(232, 134, 151);
@@ -48,8 +49,8 @@
     width: 40%;
 }
 img{
-    height: 60%;
-    width: 60%;
+    height: 250px;
+    width: 250px;
     padding: 20px;
     border-radius: 25%;
 }
